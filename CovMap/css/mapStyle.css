@@ -11,6 +11,15 @@ body {
     width: 100%;
     z-index: -1;
 }
+header {
+    background-color: #0047AB;
+}
+
+h1 {
+    text-align: center;
+    z-index: 1;
+    color: #fff;
+}
 .sidebar {
     height: 100%;
     width: 0;
@@ -98,7 +107,7 @@ body {
 }
 
 #main {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     transition: margin-left .5s;
@@ -143,6 +152,7 @@ h3{
     width: 330px;
     height: 500px;
     color: #111;
+    z-index: 99;
 }
 
 

@@ -79,3 +79,16 @@ function openCity(evt, cityName) {
 function closeTab() {
     $(".tabcontent").hide();
 }
+$('#btnReport').click( function(){
+    alert('Envoi en cours');
+    setTimeout("location.reload(true);", 1000);
+});
+$('.form-check').change( function(){
+    var checked = $('#Reason4').is(':checked');
+    if(checked == 1){
+        $("#other-reason").removeAttr('disabled');
+    }
+    else
+        $("#other-reason").attr('disabled','disabled');
+});
+
