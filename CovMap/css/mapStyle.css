@@ -208,3 +208,8 @@ input[type='checkbox'] + label span {
     background-color: #0047AB;
     cursor: pointer;
 } */
+
+#hinh{
+    width: 18px;
+    height: 18px;
+}
