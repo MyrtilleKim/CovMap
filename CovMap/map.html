@@ -13,16 +13,15 @@
     <script src="https://kit.fontawesome.com/867a38eeb9.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    <script>var searchBox = false;</script>
+    <script>var searchBox = true;</script>
     <div id="mySidebar" class="sidebar">
         <div class="tab">
             <button class="tablinks"><a href="./statistiques.html"><i class="far fa-chart-bar"></i></a></button>
-            <button class="tablinks active"><a href="./direction.html"><i class="fas fa-search-location"></i></a></button>
-            <button class="tablinks"><a href="./map.html"><i class="fas fa-location-arrow"></i></a></button>
+            <button class="tablinks"><a href="./direction.html"><i class="fas fa-search-location"></i></a></button>
+            <button class="tablinks active"><a href="./map.html"><i class="fas fa-location-arrow"></i></a></button>
             <button class="tablinks" data-bs-toggle="modal" data-bs-target="#report"><i
                     class="fas fa-exclamation-triangle"></i></button>
             <button class="tablinks"><i class="fas fa-info-circle"></i></button>
@@ -46,7 +45,7 @@
                                 Entrez le lieu de signlement, s'il vous plait
                             </div>
                         </div>
-                        <h4>La raison</h4>
+                        <h5>La raison</h5>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="Reason" id="Reason1" value="option1"
                                 checked>
@@ -83,7 +82,7 @@
                         </div>
                         <div class="mb-3 has-validation">
                             <label for="note" class="form-label">
-                                <h4>Noter</h4>
+                                <h5>Noter *</h5>
                             </label>
                             <textarea class="form-control" rows="3" placeholder="Description en détail" name="content"
                                 id="note" required></textarea>
@@ -91,6 +90,7 @@
                                 Décrivez en détail, s'il vous plait
                             </div>
                         </div>
+                        <em>* Obligatoire</em>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -101,20 +101,65 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">LES INFORMATIONS</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1>LES INFORMATIONS</h1>
+                    <input type="checkbox" id="loca1">
+                    <label for="local1"> <img src="images/h1.png" id="hinh"> Zones avec des points
+                        épidémiologiques</label><br><br>
+
+                    <input type="checkbox" id="loca2">
+                    <label for="loca2"> <img src="images/h2.png" id="hinh"> Zones avec des points de
+                        blocage</label><br><br>
+
+                    <input type="checkbox" id="loca3">
+                    <label for="vehicle3"> <img src="images/h3.png" id="hinh"> Lieu
+                        d'essai</label><br><br>
+
+                    <input type="checkbox" id="loca4">
+                    <label for="loca4"> <img src="images/h4.png" id="hinh"> Hôpitaux, établissements
+                        médicaux</label><br><br>
+
+                    <input type="checkbox" id="loca5">
+                    <label for="loca6"> <img src="images/h5.png" id="hinh"> Hôpitaux, établissements
+                        médicaux</label><br><br>
+
+                    <input type="checkbox" id="loca6">
+                    <label for="loca7"> <img src="images/h6.png" id="hinh"> Services
+                        essentiels</label><br><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">FERMER</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">REGARDER</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="map">
         <div id="main">
             <button class="openbtn" onclick="clickNav()">&#9776;</button>
+            <button id="btn-1" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            style="margin-left: 85px; margin-top:30px; background-color: #f69321; border: none;">
+            REGARDER LES INFORMATIONS
+        </button>
         </div>
     </div>
     <script
-        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
     <link rel="stylesheet"
-        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
         type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="js/searchScript.js"></script>
+
 </body>
 
 </html>
