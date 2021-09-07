@@ -190,3 +190,58 @@ h2{
     font-weight: bold;
     text-align: center;
 }
+
+.counter{
+    color: #444;
+    background-color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    width: 200px;
+    padding: 20px 15px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3),7px -7px #FCAA02;
+    border-radius: 7px;
+}
+.counter h3{
+    color: #fff;
+    background-color: #FCAA02;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 6px 6px 5px;
+    margin: 0 0 16px;
+    border-radius: 5px;
+}
+.counter .counter-value{
+    font-size: 35px;
+    line-height: 35px;
+    font-weight: 700;
+    text-shadow: 5px 5px rgba(0,0,0,0.15);
+    margin: 0 0 15px;
+    display: block;
+}
+.counter .counter-icon{
+    color: #FCAA02;
+    font-size: 35px;
+    line-height: 35px;
+}
+.counter.red{ box-shadow: 0 0 10px rgba(0,0,0,0.3), 7px -7px #FF664F; }
+.counter.red h3{ background-color: #FF664F; }
+.counter.red .counter-icon{ color: #FF664F; }
+
+.counter.yellow{ box-shadow: 0 0 10px rgba(0,0,0,0.3), 7px -7px #eae100; }
+.counter.yellow h3{ background-color: #eae100; }
+.counter.yellow .counter-icon{ color: #eae100; }
+
+.counter.green{ box-shadow: 0 0 10px rgba(0,0,0,0.3), 7px -7px #63a91f}
+.counter.green h3{ background-color: #63a91f    ; }
+.counter.green .counter-icon{ color: #63a91f   ; }
+
+.counter.gray{ box-shadow: 0 0 10px rgba(0,0,0,0.3), 7px -7px #625f5e; }
+.counter.gray h3{ background-color:#625f5e; }
+.counter.gray .counter-icon{ color: #625f5e; }
+
+@media screen and (max-width:990px){
+    .counter{ margin-bottom: 40px; }
+}
