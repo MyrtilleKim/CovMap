@@ -39,7 +39,8 @@ h1 {
 .tab button:hover .fa-exclamation-triangle,
 .tab button:hover .fa-chart-bar,
 .tab button:hover .fa-search-location,
-.tab button:hover .fa-info-circle {
+.tab button:hover .fa-info-circle,
+.tab button:hover .fa-location-arrow{
     color: #0047AB;
     font-size: 40px;
 }
@@ -49,14 +50,16 @@ h1 {
 .tab button.active .fa-exclamation-triangle,
 .tab button.active .fa-chart-bar,
 .tab button.active .fa-search-location,
-.tab button.active .fa-info-circle {
+.tab button.active .fa-info-circle, 
+.tab button.active .fa-location-arrow{
     color: #0047AB;
     font-size: 40px;
 }
 .fa-exclamation-triangle,
 .fa-chart-bar,
 .fa-search-location,
-.fa-info-circle {
+.fa-info-circle,
+.fa-location-arrow {
     color: #f5f5f5;
     font-size: 40px;
 }
@@ -111,6 +114,7 @@ h1 {
     padding: 20px;
     width: fit-content;
     z-index: 1;
+    /* background-color: aqua; */
 }
 
 @media screen and (max-height: 450px) {
@@ -121,63 +125,14 @@ h1 {
         font-size: 18px;
     }
 }
-h3{
-    font-size: 30px;
-    font-weight: bold;
-    font-family: 'Roboto Condensed', sans-serif;
-}
-.fa-walking,
-.fa-motorcycle,
-.fa-car,
-.fa-bus{
-    color: #111;
-    font-size: 40px;
-}
 .btn-close {
     color: rgba(255, 255, 255, 0.774);
     background-color: #fff;
 }
 
-.iconVehicule {
-    display: flex;
-    justify-content: space-around;
-}
-
-.fa-exchange-alt {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-
-.iconEx {
-    padding: 35px 10px;
-}
-
 .point {
     margin-left: 10px;
 }
-/* input[type='checkbox'] {
-    margin-right: 7px;
-    line-height: 12px;
-    display: none;
-}
-input[type='checkbox'] + label {
-    width: auto;
-    color: #333;
-}
-input[type='checkbox'] + label span {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: -2px 5px 0 0;
-    vertical-align: middle;
-    background: url(../images/bars-solid.svg) left top no-repeat;
-    background-color: #0047AB;
-    cursor: pointer;
-} */
-
 #hinh{
     width: 18px;
     height: 18px;

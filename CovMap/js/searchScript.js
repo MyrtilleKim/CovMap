@@ -1,27 +1,50 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoidGhxdWFuZyIsImEiOiJja3NlaG11bm4xMHJhMm9wM3kzeDk3eWFyIn0.UaKcxdXdZmPIUa0PfbBqZw';
-var isOpen = false;
-function openNav() {
-    document.getElementById("mySidebar").style.width = "80px";
-    document.getElementById("main").style.marginLeft = "80px";
-}
-
-function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-}
-
-function clickNav() {
-    if(isOpen === false){
-        openNav();
-        isOpen = true;
+const coordinatesGeocoder = function (query) {
+    const matches = query.match(
+        /^[ ]*(?:Lat: )?(-?\d+\.?\d*)[, ]+(?:Lng: )?(-?\d+\.?\d*)[ ]*$/i
+    );
+    if (!matches) {
+        return null;
     }
-    else{
-        closeNav()
-        isOpen = false;
+
+    function coordinateFeature(lng, lat) {
+        return {
+            center: [lng, lat],
+            geometry: {
+                type: 'Point',
+                coordinates: [lng, lat]
+            },
+            place_name: 'Lat: ' + lat + ' Lng: ' + lng,
+            place_type: ['coordinate'],
+            properties: {},
+            type: 'Feature'
+        };
     }
-}
+
+    const coord1 = Number(matches[1]);
+    const coord2 = Number(matches[2]);
+    const geocodes = [];
+
+    if (coord1 < -90 || coord1 > 90) {
+        // must be lng, lat
+        geocodes.push(coordinateFeature(coord1, coord2));
+    }
+
+    if (coord2 < -90 || coord2 > 90) {
+        // must be lat, lng
+        geocodes.push(coordinateFeature(coord2, coord1));
+    }
+
+    if (geocodes.length === 0) {
+        // else could be either lng, lat or lat, lng
+        geocodes.push(coordinateFeature(coord1, coord2));
+        geocodes.push(coordinateFeature(coord2, coord1));
+    }
+
+    return geocodes;
+};
+
 navigator.geolocation.getCurrentPosition(sucessLocation, errorLocation)
-
 function sucessLocation(position) {
     setupMap([position.coords.longitude, position.coords.latitude])
 }
@@ -40,15 +63,54 @@ function setupMap(center) {
     const nav = new mapboxgl.NavigationControl({
         visualizePitch: true
     });
-    var directions = new MapboxDirections({
-        accessToken: 'pk.eyJ1IjoidGhxdWFuZyIsImEiOiJja3NlaG11bm4xMHJhMm9wM3kzeDk3eWFyIn0.UaKcxdXdZmPIUa0PfbBqZw',
-        unit: 'metric',
-        language: 'fr-FR',
-    });
-    map.addControl(directions, 'top-right');
-    map.addControl(nav, 'top-right');
+
+    console.log(searchBox);
+    if(searchBox === true){
+        map.addControl(
+            new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                localGeocoder: coordinatesGeocoder,
+                zoom: 4,
+                placeholder: 'Essayez Ho Chi Minh ville',
+                mapboxgl: mapboxgl,
+                reverseGeocode: true
+            })
+        );
+    }
+    else{
+        map.addControl(
+            new MapboxDirections({
+            accessToken: mapboxgl.accessToken,
+            unit: 'metric',
+            language: 'fr-FR'
+        }), 
+        'top-right'
+        );
+    }   
+    map.addControl(nav, 'bottom-right');
     console.log("done");
-    
+
+}
+var isOpen = false;
+function openNav() {
+    document.getElementById("mySidebar").style.width = "80px";
+    document.getElementById("main").style.marginLeft = "80px";
+}
+
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+
+function clickNav() {
+    if (isOpen === false) {
+        openNav();
+        isOpen = true;
+    }
+    else {
+        closeNav()
+        isOpen = false;
+    }
 }
 (function () {
     'use strict'
@@ -77,3 +139,6 @@ $('.form-check').change(function () {
     else
         $("#other-reason").attr('disabled', 'disabled');
 });
+
+
+
