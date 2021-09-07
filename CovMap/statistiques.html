@@ -9,7 +9,7 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link href="css/mapStyle.css" rel="stylesheet" />
+    <link href="css/staticStyle.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/867a38eeb9.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -23,169 +23,97 @@
 </style>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>CovMap</h1>
-        </header>
+    <div class="header">
+        <a href="./direction.html"><i class="far fa-times-circle"></i></a>
+        <h1>CovMap</h1>
+    </div>
 
-        <div id="mySidebar" class="sidebar">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div class="tab">
-                <button class="tablinks active">
-                    <i class="far fa-chart-bar"></i>
-                </button>
-                <button class="tablinks"><a href="./direction.html"><i
-                    class="fas fa-search-location"></i></a></button>
-                    <button class="tablinks" onclick="openCity(event, 'Report')"><i class="fas fa-exclamation-triangle"></i></button>
-                    <button class="tablinks" onclick="openCity(event, 'About')"><i class="fas fa-info-circle"></i></button>
-            </div>
-        </div>
-
-        <div id="main">
-            <button class="openbtn" onclick="openNav()">&#9776;</button>
-        </div>
-        <h2>Données COVID-19 au Vietnam</h2>
-        <!--Statistique-->
-        <div class="row">
-            <div class="col-xl-4 col-md-4">
-                <div class="card text-white bg-danger mb-3">
-                    <div class="card-body">
-                        <div class="card-title">
-                            <p class="text-center">NOMBRE D'INFECTIONS</p>
-                        </div>
-                        <hr>
-                        <div class="card-text fs-2">
-                            <p class="text-center"><b>293.301</b></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-4">
-                <div class="card text-white bg-secondary mb-3">
-                    <div class="card-body">
-                        <div class="card-title">
-                            <p class="text-center">NOMBRE DE CAS TRAITÉ</p>
-                        </div>
-                        <hr>
-                        <div class="card-text fs-2">
-                            <p class="text-center"><b>175.517</b></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-4">
-                <div class="card text-white bg-success mb-3">
-                    <div class="card-body">
-                        <div class="card-title">
-                            <p class="text-center">NOMBRE DE CAS SAINS</p>
-                        </div>
-                        <hr>
-                        <div class="card-text fs-2">
-                            <p class="text-center"><b>111.308</b></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
-        <hr>
-        <h2>Données COVID-19 à HCMV</h2>
-        <div class="container-sm">
-            <div class="row">
-                <div class="col">
-                    <h3 class="text-center">Nombre de cas positifs au COVID-19</h3>
-                    <p class="text-center">au cours des 7 derniers jours</p>
-                    <div class="card chart-container">
-                        <canvas id="myChart1" width="10px" height="10px"></canvas>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <h3 class="text-center">Total des cas positifs de COVID-19</h3>
-                    <p class="text-center">au cours des 5 derniers jours</p>
-                    <div class="card chart-container">
-                        <canvas id="myChart2" width="10px" height="10px"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <h3 class="text-center">Nombre de cas positifs par région</h3>
-        <div class="card chart-container">
-            <canvas id="myChart3" width="5px" height="5px"></canvas>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="tab">
+            <button class="tablinks active">
+                <i class="far fa-chart-bar"></i>
+            </button>
+            <button class="tablinks"><a href="./direction.html"><i class="fas fa-search-location"></i></a></button>
+            <button class="tablinks" onclick="openCity(event, 'Report')"><i
+                    class="fas fa-exclamation-triangle"></i></button>
+            <button class="tablinks" onclick="openCity(event, 'About')"><i class="fas fa-info-circle"></i></button>
         </div>
     </div>
-    <div id="Report" class="tabcontent" style="display:none;">
-        <div class="row">
-            <div class="col-10">
-                <h3>Reportage</h3>
-            </div>
-            <div class="col-2">
-                <button type="button" class="btn-close" aria-label="Close" onclick="closeTab()"></button>
-            </div>
-        </div>
 
-        <input class="form-control" type="text" placeholder="Le lieu de signlement" aria-label="default input example">
-        <h4>La raison</h4>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="Reason" id="Reason1" value="option1" checked>
-            <label class="form-check-label" for="Reason1">
-                Les immigrants illégales
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="Reason" id="Reason2" value="option2">
-            <label class="form-check-label" for="Reason2">
-                Les patients COVID-19
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="Reason" id="Reason3" value="option3">
-            <label class="form-check-label" for="Reason3">
-                Les personne suspectée d'être infectée
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="Reason" id="Reason4" value="option4">
-            <label class="form-check-label" for="Reason4">
-                <div class="row">
-                    <div class="col-3">Autres</div>
-                    <div class="col-9"><input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example"></div>
+    <h2>Données COVID-19 au Vietnam</h2>
+    <!--Statistique-->
+    <div class="row">
+        <div class="col-xl-4 col-md-4">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-body">
+                    <div class="card-title">
+                        <p class="text-center">NOMBRE D'INFECTIONS</p>
+                    </div>
+                    <hr>
+                    <div class="card-text fs-2">
+                        <p class="text-center"><b>293.301</b></p>
+                    </div>
                 </div>
-            </label>
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">
-                <h4>Noter</h4>
-            </label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-danger" type="button">Report</button>
-        </div>
-    </div>
-    <div id="About" class="tabcontent" style="display:none;">
-        <div class="row">
-            <div class="col-10">
-                <h3>A propos de nous</h3>
             </div>
-            <div class="col-2">
-                <button type="button" class="btn-close" aria-label="Close" onclick="closeTab()"></button>
+        </div>
+        <div class="col-xl-4 col-md-4">
+            <div class="card text-white bg-warning  mb-3">
+                <div class="card-body">
+                    <div class="card-title">
+                        <p class="text-center">NOMBRE DE CAS TRAITÉ</p>
+                    </div>
+                    <hr>
+                    <div class="card-text fs-2">
+                        <p class="text-center"><b>175.517</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-4">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                    <div class="card-title">
+                        <p class="text-center">NOMBRE DE CAS SAINS</p>
+                    </div>
+                    <hr>
+                    <div class="card-text fs-2">
+                        <p class="text-center"><b>111.308</b></p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div>
-            Bienvenue. Je suis CovMap. Je vous aider:
-            <ul>
-                <li>Consulter les informations, les statistiques de COVID19 en Ho Chi Minh ville</li>
-                <li>Chercher l'itinéraire sûr pour vous</li>
-                <li>Reportage</li>
-            </ul>
-            Merci pour votre visite !!!
+
+    </div>
+
+    <hr>
+    <h2>Données COVID-19 à HCMV</h2>
+    <div class="container-sm">
+        <div class="row">
+            <div class="col">
+                <h3 class="text-center">Nombre de cas positifs au COVID-19</h3>
+                <p class="text-center">au cours des 7 derniers jours</p>
+                <div class="card chart-container">
+                    <canvas id="myChart1" width="10px" height="10px"></canvas>
+                </div>
+
+            </div>
+            <div class="col">
+                <h3 class="text-center">Total des cas positifs de COVID-19</h3>
+                <p class="text-center">au cours des 5 derniers jours</p>
+                <div class="card chart-container">
+                    <canvas id="myChart2" width="10px" height="10px"></canvas>
+                </div>
+            </div>
         </div>
     </div>
+    <br>
+    <h3 class="text-center">Nombre de cas positifs par région</h3>
+    <div class="card chart-container">
+        <canvas id="myChart3" width="5px" height="5px"></canvas>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
