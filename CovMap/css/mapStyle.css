@@ -589,7 +589,7 @@ h1 {
 .tab button.active .fa-chart-bar,
 .tab button.active .fa-search-location,
 .tab button.active .fa-info-circle, 
-.tab button.active .fa-location-arrow{
+.tab button.active .fa-home{
     color: #0047AB;
     font-size: 40px;
 }
@@ -597,7 +597,7 @@ h1 {
 .fa-chart-bar,
 .fa-search-location,
 .fa-info-circle,
-.fa-location-arrow {
+.fa-home {
     color: #f5f5f5;
     font-size: 40px;
 }
