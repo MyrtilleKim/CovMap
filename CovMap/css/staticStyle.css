@@ -245,3 +245,88 @@ h2{
 @media screen and (max-width:990px){
     .counter{ margin-bottom: 40px; }
 }
+
+/* FOOTER */
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    height: fit-content;
+    font-family: "Roboto", sans-serif;
+    /* text-align: center; */
+    color: #fff;
+    background-color: #0047AB;
+  }
+  
+  footer h5 {
+    color: #ff9900;
+    text-align: center;
+  }
+  
+  .subcribe {
+    padding-left: 50px;
+    border: #fff 1px solid;
+  }
+  
+  .contactInfo {
+    text-align: start;
+  }
+  
+  .navigation a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  .navigation a:hover {
+    text-decoration: underline;
+  }
+  
+  #fb {
+    background: #3b5998;
+    color: white;
+  }
+  
+  #ins {
+    background: url("../images/InsBG.jpg");
+    color: white;
+  }
+  
+  #pin {
+    background: #cb2027;
+    color: white;
+  }
+  
+  footer .fa-circle {
+    font-size: 5px;
+    color: #fff;
+  }
+  
+  .rights {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    color: rgb(165, 165, 165);
+  }
+  
+  .table-borderless {
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+  }
+  
+  .table-borderless td:first-of-type {
+    text-align: end;
+  }
+  
+  .table-borderless td {
+    text-align: left;
+  }
+  
+  .table-borderless th h5 {
+    text-align: left;
+  }
+  
+  #button-addon2{
+    background-color: #ff9900;
+    border: #ff9900 solid;
+  }
