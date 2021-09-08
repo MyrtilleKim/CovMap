@@ -34,18 +34,17 @@ h1 {
   margin-left: 5px;
   margin-top: 5px;
 }
-
 .header h1{
-  float: center;
+  float: center
 }
 /*============*/
 .nav-tabs a {
     color: #0047AB;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 
 .about h5 {
-    font-family: 'Rasa', serif;
+    font-family: 'Roboto', serif;
     font-size: 60px;
     background: #0047AB;
     background: -webkit-repeating-linear-gradient(to top, #0047AB 0%, #FF9900 100%);
@@ -111,7 +110,7 @@ footer {
   margin-top: 20px;
   padding: 10px;
   height: fit-content;
-  font-family: "Mitr", sans-serif;
+  font-family: "Roboto", sans-serif;
   /* text-align: center; */
   color: #fff;
   background-color: #0047AB;
@@ -169,7 +168,7 @@ footer .fa-circle {
 }
 
 .table-borderless {
-  font-family: "Mitr", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #fff;
 }
 
