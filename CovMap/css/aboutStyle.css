@@ -34,9 +34,8 @@ h1 {
   margin-left: 5px;
   margin-top: 5px;
 }
-
 .header h1{
-  float: center;
+  float: center
 }
 /*============*/
 .nav-tabs a {
