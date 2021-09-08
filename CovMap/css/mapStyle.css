@@ -578,7 +578,7 @@ h1 {
 .tab button:hover .fa-chart-bar,
 .tab button:hover .fa-search-location,
 .tab button:hover .fa-info-circle,
-.tab button:hover .fa-location-arrow{
+.tab button:hover .fa-home{
     color: #0047AB;
     font-size: 40px;
 }
