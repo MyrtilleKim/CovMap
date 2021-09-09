@@ -28,6 +28,7 @@
 </style>
 
 <body>
+    <div id="preloader"></div>
     <div class="header">
         <a href="./map.html"><i class="fas fa-chevron-circle-left"></i></i></a>
         <h1>CovMap</h1>
@@ -166,5 +167,10 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="js/static.js"></script>
 <script src="js/mapScript.js"></script>
-
+<script>
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", () => {
+    loader.style.display = "none";
+    })
+      </script>
 </html>

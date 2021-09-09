@@ -21,6 +21,7 @@
 
 <body data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
     <!-- Messenger Plugin chat Code -->
+    <div id="preloader"></div>
     <div class="header">
         <a href="./map.html"><i class="fas fa-chevron-circle-left"></i></a>
         <h1>CovMap</h1>
@@ -265,6 +266,12 @@
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
     <script src="./js/aboutScript.js"></script>
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", () => {
+        loader.style.display = "none";
+        })
+          </script>
 </body>
 
 </html>
