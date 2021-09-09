@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Add a geocoder</title>
+    <title>CovMap</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.0/mapbox-gl.js"></script>
@@ -38,7 +38,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <form class="login-form needs-validation" novalidate action="#" onsubmit="return false;">
+                <form class="login-form needs-validation" novalidate action="#">
                     <div class="modal-body">
                         <div class="mb-3 has-validation">
                             <input class="form-control" type="text" placeholder="Le lieu de signlement" value="235 Nguyễn Văn Cừ, Phường 4, Quận 5, Thành phố Hồ Chí Minh"
@@ -96,7 +96,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                        <button type="submit" class="btn btn-danger" onsubmit="location.reload();"
+                        <button type="submit" class="btn btn-danger" onsubmit="alert('Vous avez soumis avec succès'); map.reload();"
                             id="btnReport">Reporter</button>
                     </div>
                 </form>

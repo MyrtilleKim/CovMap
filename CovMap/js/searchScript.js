@@ -139,6 +139,12 @@ $('.form-check').change(function () {
     else
         $("#other-reason").attr('disabled', 'disabled');
 });
-
-
+// $('#btnReport').on('submit', function(){
+    
+    
+// })
+// $('form').submit(function(){
+//     alert('kfsldkjfsdlkf');
+//     location.reload();
+// })
 
