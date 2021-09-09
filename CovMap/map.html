@@ -19,12 +19,13 @@
     <script>var searchBox = true;</script>
     <div id="mySidebar" class="sidebar">
         <div class="tab">
-            <button class="tablinks active"><a href="./map.html"><i class="fas fa-home" data-bs-toggle="tooltip" data-bs-placement="right" title="Page d'accueil"></i></a></button>
-            <button class="tablinks"><a href="./direction.html"><i class="fas fa-search-location"></i></a></button>
-            <button class="tablinks" data-bs-toggle="modal" data-bs-target="#report"><i
-                    class="fas fa-exclamation-triangle"></i></button>
-            <button class="tablinks"><a href="./statistiques.html"><i class="far fa-chart-bar"></i></a></button>
-            <button class="tablinks"><a href="./about.html"><i class="fas fa-info-circle"></i></a></button>
+            <button class="tablinks active" data-bs-toggle="tooltip" data-bs-placement="right" title="Page d'accueil"><a href="./map.html"><i class="fas fa-home"></i></a></button>
+            <button class="tablinks" data-bs-toggle="tooltip" data-bs-placement="right" title="Trouver le chemin"><a href="./direction.html"><i class="fas fa-search-location"></i></a></button>
+            <button class="tablinks" data-bs-toggle="modal" data-bs-target="#report" data-bs-toggle="tooltip" data-bs-placement="right" title="Reportage"><i
+                class="fas fa-exclamation-triangle"></i></button>
+            <button class="tablinks" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="tooltip" data-bs-placement="right" title="Regarder les informations"><i class="fas fa-database"></i></button>
+            <button class="tablinks"><a href="./statistiques.html" data-bs-toggle="tooltip" data-bs-placement="right" title="Statistiques"><i class="far fa-chart-bar"></i></a></button>
+            <button class="tablinks"><a href="./about.html" data-bs-toggle="tooltip" data-bs-placement="right" title="À propos de nous"><i class="fas fa-info-circle"></i></a></button>
         </div>
     </div>
     </div>
@@ -39,7 +40,7 @@
                 <form class="login-form needs-validation" novalidate action="#" onsubmit="return false;">
                     <div class="modal-body">
                         <div class="mb-3 has-validation">
-                            <input class="form-control" type="text" placeholder="Le lieu de signlement"
+                            <input class="form-control" type="text" placeholder="Le lieu de signlement" value="235 Nguyễn Văn Cừ, Phường 4, Quận 5, Thành phố Hồ Chí Minh"
                                 aria-label="default input example" required>
                             <div class="invalid-feedback">
                                 Entrez le lieu de signlement, s'il vous plait
@@ -244,10 +245,6 @@
         </div>
         <div id="main">
             <button class="openbtn" onclick="clickNav()">&#9776;</button>
-            <button id="btn-1" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-            style="margin-left: 85px; margin-top:30px; background-color: #f69321; border: none;">
-            REGARDER LES INFORMATIONS
-        </button>
         </div>
     </div>
     <script

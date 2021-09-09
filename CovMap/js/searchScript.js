@@ -70,7 +70,7 @@ function setupMap(center) {
             new MapboxGeocoder({
                 accessToken: mapboxgl.accessToken,
                 localGeocoder: coordinatesGeocoder,
-                zoom: 4,
+                zoom: 15,
                 placeholder: 'Essayez Ho Chi Minh ville',
                 mapboxgl: mapboxgl,
                 reverseGeocode: true
