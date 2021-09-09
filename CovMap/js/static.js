@@ -7,13 +7,7 @@ const data = {
       label: "Cas de COVID-19",
       data: [3416, 3841, 3531, 4231, 4516, 3341, 3559],
       backgroundColor: [
-        "rgb(236,0,50)",
-        "rgb(236,0,50)",
-        "rgb(236,0,50)",
-        "rgb(236,0,50)",
-        "rgb(236,0,50)",
-        "rgb(236,0,50)",
-        "rgb(236,0,50)",
+        "rgba(251,46,68,0.84)"
       ],
       borderColor: [
         "rgb(197,0,42)",
@@ -82,7 +76,7 @@ const data3 = {
         5675, 5623, 5422, 5403, 5381, 4321, 3949, 1829, 734],
       fill: false,
       backgroundColor: [
-        "rgb(255,98,98)",
+        "rgba(251,46,68,0.84)",
       ],
       borderColor: [
         "rgb(255, 99, 132)",
