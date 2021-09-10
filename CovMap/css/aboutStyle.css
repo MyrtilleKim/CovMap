@@ -37,6 +37,9 @@ h1 {
 .header h1{
   float: center
 }
+h2{
+  font-weight: bold;
+}
 /*============*/
 .nav-tabs a {
     color: #0047AB;
